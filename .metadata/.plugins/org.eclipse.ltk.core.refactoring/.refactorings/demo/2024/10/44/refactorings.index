@@ -1,0 +1,8 @@
+1730076434244	Rename resource 'application.properties'
+1730076779983	Delete element
+1730078438408	Move compilation unit
+1730078638395	Pull up 'categoryRepository' to 'ICategoryService'
+1730080459632	Rename resource 'view'
+1730081052118	Move 'fragments' to 'admin'
+1730081386217	Rename resource 'content.html'
+1730081604555	Rename resource 'list.html'

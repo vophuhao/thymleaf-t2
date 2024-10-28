@@ -1,0 +1,5 @@
+package vn.iostart.service.Imp;
+
+public interface ICategoryService {
+
+}

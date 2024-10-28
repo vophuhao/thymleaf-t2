@@ -1,0 +1,6 @@
+package vn.iostart.repository;
+
+public interface CategoryRepository {
+
+	
+}

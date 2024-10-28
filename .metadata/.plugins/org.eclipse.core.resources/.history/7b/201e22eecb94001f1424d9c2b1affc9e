@@ -1,0 +1,18 @@
+package vn.iostart.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import vn.iostart.entity.CategoryEntity;
+
+public interface CategoryRepository extends JpaRepository<CategoryEntity, Long> {
+
+	<S extends CategoryEntity> S save(S entity);
+
+	List<CategoryEntity> findAll();
+
+	List<CategoryEntity> findByNameContaining(String name);
+
+	
+}
