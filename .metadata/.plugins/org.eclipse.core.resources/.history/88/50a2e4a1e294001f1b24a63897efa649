@@ -1,0 +1,32 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/Layout"
+	layout:decorate="~{admin/home.html}">
+<section class="row" layout: fragment="content">
+<div class="col mt-4">
+<div class="card">
+<div class="card-header">List Category</div>
+<div class="card-body">
+<!-- Hiến thông báo -->
+<div th: if="${message != null}" class="alert alert-primary"
+role="alert">
+<i>[[${message}]]</i>
+</div>
+<!-- Hết thông báo -->
+<div class="row mt-2 mb-2">
+<div class="col-md-6">
+<form th:action="@{/admin/categories/searchpaginated}">
+<div class="input-group">
+<input type="text" class="form-control ml-2" name="name"
+id="name" placeholder="Nhập từ khóa để tìm" />
+<button class="btn btn-outline-primary mL-2">Search</button>
+</div>
+</form>
+</div>
+<div class="col-md-6">
+<div class="float-right">
+<a class="btn btn-outline-success"
+</div>
+th:href="@{/admin/categories/add}">Add New Category</
+</div>
+</div>
