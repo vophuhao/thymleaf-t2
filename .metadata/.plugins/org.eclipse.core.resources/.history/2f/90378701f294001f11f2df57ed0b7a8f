@@ -28,9 +28,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/Layout"
 		
 		<section class="row mt-4">
 			<div class="col mt-5 mb-5">
-				<div layout:fragment="content">
-				
-				</div>
+				<div layout:fragment="content"></div>
 			</div>
 		</section>
 	</main>
