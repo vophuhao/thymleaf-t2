@@ -1,0 +1,33 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/Layout"
+	layout:decorate="~{admin/home.html}">
+<section class="row" layout:fragment="content">
+	<div class="col-6 offset-3 mt-4">
+		<form th:action="@{/admin/categories/saveOrUpdate}" method="POST" th:object="${category}">
+			<div class="card">
+				
+				<div class="card-body">
+					<div class="mb-3">
+						<label for="categoryId" class="form-label">Category ID: </label> <input
+							type="hidden"> <input type="text"
+							readonly="readonly" class="form-control"  id="categoryId" name="categoryId"
+							aria-describedby="categoryIdid" placeholder="Category Id">
+						
+					</div>
+				</div>
+				<div class="mb-3">
+					<label for="name" class="form-Label">Category Name:</label> <input
+						type="text" class="form-control"  id="name"
+						name="name" aria-describedby="nameid" placeholder="Category Name">
+					<div  id="nameIdid"
+						class="form-text text-muted">
+						<span class="text-danger">Category </span>
+					</div>
+				</div>
+				<button>Save</button>
+			</div>
+		
+		</form>
+	</div>
+</section>

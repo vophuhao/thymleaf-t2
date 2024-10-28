@@ -31,6 +31,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import ch.qos.logback.core.model.Model;
+
 @Controller
 @RequestMapping("admin/categories")
 public class CategoryController {
@@ -86,4 +88,26 @@ public class CategoryController {
 		}*/
 
 	}
+	@GetMapping("/add") public String add(ModelMap model) { 
+		
+		 return"admin/add";
+		  
+}
+	@PostMapping("save")
+	public String add(@Valid CategoryEntity category, BindingResult result, Model model){
+        if (result.hasErrors()) {
+                return "admin/categories/add";
+        }
+        categoryService.save(category);
+        return "redirect:/admin/categories";
+}
+	 @GetMapping("/edit/{id}")
+     public String edit(@PathVariable("id") long id, Model model){
+             CategoryEntity category = categoryService.findById(id)
+                     .orElseThrow(() -> new RuntimeException("Not found"));
+             model.addAttribute("category", category);
+             return "CRUD/category_update";
+     }
+			 
+	
 }

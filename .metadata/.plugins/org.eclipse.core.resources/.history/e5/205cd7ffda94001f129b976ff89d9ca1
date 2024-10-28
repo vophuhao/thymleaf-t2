@@ -1,0 +1,41 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/Layout"
+	layout:decorate="~{admin/home.html}">
+<section class="row" layout: fragment="content">
+	<div class="col-6 offset-3 mt-4">
+		<form th:action="@{/admin/categories/saveOrUpdate}" method="POST"
+			th:object="$(category}">
+			<div class="card">
+				<div class="card-header">
+					<h2
+						th:text="$(category.isEdit? 'Edit Category: 'Add New Category')">Add
+						New Category</h2>
+				</div>
+				<div class="card-body">
+					<div class="mb-3" th: if="$(category.isEdit)">
+						<label for="categoryId" class="form-Label">Category ID: </label> <input<input
+							type="hidden" th: field="*(isEdit)"> type="text"
+						readonly="readonly" class="form-control" th: field="#{categoryId}"
+						id="categoryId" name="categoryId" aria-describedby="categoryIdid"
+						placeholder="Category Id">
+						<div th: if="${#fields.hasErrors('categoryId')}" id="categoryIdid"
+							class="form-text text-muted">
+							<span class="text-danger">Category ID is required!</span>
+						</div>
+						30
+					</div>
+					<div class="mb-3">
+						<label for="name" class="form-label">Category Name: </label> <input
+							type="text" class="form-control" th: field="" (name)" id="name"
+							name="name" aria-describedby="nameid" placeholder="Category Name">
+						<div th: if="${#fields.hasErrors('name'))" id="name Idid"
+							class="form-text text-muted">
+							<span class="text-danger">Cate 
+						</div>
+					</div>
+				</div>
+				</div>
+		</form>
+	</div>
+</section>

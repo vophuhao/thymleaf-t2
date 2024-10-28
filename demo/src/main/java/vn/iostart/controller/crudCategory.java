@@ -11,7 +11,7 @@ public class crudCategory {
 
 	@RequestMapping(value="/list", method=RequestMethod.GET)
 	public String requestMethodName(@RequestParam String param) {
-		return "/view/list";
+		return "/list";
 	}
 	
 	

@@ -1,5 +1,5 @@
 server:
-  port: 2002
+  port: 2000
 #  servlet:
 #    context-path: /test
 
@@ -13,10 +13,7 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-  mvc:
-    view:
-      prefix: /WEB-INF/views/
-      suffix: .jsp
+  
   mandatory-file-encoding: UTF-8
   mail:
     default-encoding: UTF-8
