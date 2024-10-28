@@ -1,0 +1,5 @@
+<div th:fragment="header">
+	
+	<img th:src="@{https://www.google.com.vn/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fvi%2Fb%25E1%25BB%25A9c-%25E1%25BA%25A3nh%2Fc%25E1%25BA%25A3nh-v%25E1%25BA%25ADt&psig=AOvVaw1HWiZEBx-ne-gvibRULC-H&ust=1730172256144000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOCJ7YeQsIkDFQAAAAAdAAAAABAJ}" alt="Example Image">
+
+</div>

@@ -102,12 +102,24 @@ public class CategoryController {
         return "redirect:/admin/categories";
 }
 	 @GetMapping("/edit/{id}")
-     public String edit(@PathVariable("id") long id, Model model){
+     public String edit(@PathVariable("id") long id, ModelMap model){
              CategoryEntity category = categoryService.findById(id)
                      .orElseThrow(() -> new RuntimeException("Not found"));
              model.addAttribute("category", category);
-             return "CRUD/category_update";
+             return "admin/edit";
      }
-			 
-	
+	 @PostMapping("/update")
+     public String update( @Valid CategoryEntity category, BindingResult result,
+                          Model model){
+             if (result.hasErrors()){
+                     return "admin/home";
+             }
+             categoryService.save(category);
+             return "redirect:/admin/categories";
+     }
+	  @GetMapping("/delete/{id}")
+      public String delete(@PathVariable("id") long id, Model model){
+              categoryService.deleteById(id);
+              return "redirect:/admin/categories";
+      }
 }
